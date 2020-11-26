@@ -115,7 +115,7 @@ def GetUserJson(deptId,text,stuNum,userName,phone,guardianPhone,userId,customerI
 		"updatainfo": [
 			{
 			
-                        "propertyname":"mrcw1","value":"36.4"
+                        "propertyname":"mrcw1","value":"35.4"
                         },
                     {
                         "propertyname":"symptom","value":"无症状"
