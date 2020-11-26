@@ -1,4 +1,4 @@
-#💧广东水利电力学院完美校园签到
+# 💧广东水利电力学院完美校园签到
 
 **💧[广东水利电力学院](https://www.gdsdxy.edu.cn/)测试可用，欢迎大家 fork 测试使用，如果可用的话，可以开 [issue](https://github.com/llkhs/Perfect_Campus_AutoSignIn/issues) 让更多人知道****
 
