@@ -56,8 +56,8 @@ class CampusCard:
         :return:
         """
         resp = requests.post(
-            "https://server.17wanxiao.com/campus/cam_iface46/exchangeSecretkey.action",
-            #"https://app.17wanxiao.com:443/campus/cam_iface46/exchangeSecretkey.action",
+            #"https://server.17wanxiao.com/campus/cam_iface46/exchangeSecretkey.action",
+            "https://app.17wanxiao.com:443/campus/cam_iface46/exchangeSecretkey.action",
             headers={
                 #"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 5.1.1; HUAWEI MLA-AL10 Build/HUAWEIMLA-AL10)",
                 "User-Agent": "NCP/5.3.1 (iPhone; iOS 13.5; Scale/2.00)",
@@ -122,8 +122,8 @@ class CampusCard:
             #"https://reportedh5.17wanxiao.com/api/clock/school/open",
             "https://reportedh5.17wanxiao.com/api/clock/school/getUserInfo",
             headers={
-                "Referer": "https://reportedh5.17wanxiao.com/collegeHealthPunch/index.html?token="+self.user_info["sessionId"],
-                #"Referer": "https://reportedh5.17wanxiao.com/health/index.html?templateid=pneumonia&businessType=epmpics&versioncode=10531102&systemType=IOS&UAinfo=wanxiao&token="+self.user_info["sessionId"],
+                #"Referer": "https://reportedh5.17wanxiao.com/collegeHealthPunch/index.html?token="+self.user_info["sessionId"],
+                "Referer": "https://reportedh5.17wanxiao.com/health/index.html?templateid=pneumonia&businessType=epmpics&versioncode=10531102&systemType=IOS&UAinfo=wanxiao&token="+self.user_info["sessionId"],
                 "Origin": "https://reportedh5.17wanxiao.com",
                 "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E149 Wanxiao/5.3.1"
             },
