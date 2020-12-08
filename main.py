@@ -14,7 +14,7 @@ driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options
 
 def main():
     #sectets字段录入
-    sckey, success, failure, result, phone, password,guardianPhone,sckey = [], [], [], [], [], [], [], []
+    sckey, success, failure, result, phone, password,guardianPhone,egcP,sckey = [], [], [], [], [], [], [], [], []
     #多人循环录入
     while True:
         try:
@@ -22,9 +22,9 @@ def main():
             info = users.split(',')
             phone.append(info[0])
             password.append(info[1])
-            #egcP.append(info[2])
-            guardianPhone.append(info[2])
-            sckey.append(info[3])
+            egcP.append(info[2])
+            guardianPhone.append(info[3])
+            sckey.append(info[4])
         except:
             break
 
@@ -39,7 +39,7 @@ def main():
                 token = campus.user_info["sessionId"]
                 driver.get('https://reportedh5.17wanxiao.com/collegeHealthPunch/index.html?token=%s#/punch?punchId=180'%token)
                 #time.sleep(10)
-                response = check_in(loginJson["classId"],loginJson["classDescription"],loginJson["stuNo"],loginJson["username"],phone[index],loginJson["emergencyContact"],guardianPhone[index],loginJson["userId"],loginJson["customerId"],token)
+                response = check_in(loginJson["classId"],loginJson["classDescription"],loginJson["stuNo"],loginJson["username"],phone[index],guardianPhone[index],loginJson["userId"],loginJson["customerId"],token)
                 if  response.json()["msg"] == '成功'and index == 0:
                     strTime = GetNowTime()
                     success.append(value[-4:])
@@ -92,7 +92,7 @@ def GetNowTime():
     return strTime
 
 #打卡参数配置函数
-def GetUserJson(deptId,text,stuNum,userName,phone,emergencyContact,guardianPhone,userId,customerId,token):
+def GetUserJson(deptId,text,stuNum,userName,phone,egcP,guardianPhone,userId,customerId,token):
     return  {
 	"businessType": "epmpics",
 	"method": "submitUpInfo",
@@ -140,7 +140,7 @@ def GetUserJson(deptId,text,stuNum,userName,phone,emergencyContact,guardianPhone
 			},
 			{
 			"propertyname": "emergencyContact",
-			"value": emergencyContact
+			"value": egcP
 			}, 
 			{
 			"propertyname": "mergencyPeoplePhone",
@@ -152,9 +152,9 @@ def GetUserJson(deptId,text,stuNum,userName,phone,emergencyContact,guardianPhone
 }
 
 #打卡提交函数
-def check_in(deptId,text,stuNum,userName,phone,emergencyContact,guardianPhone,userId,customerId,token):
+def check_in(deptId,text,stuNum,userName,phone,egcP,guardianPhone,userId,customerId,token):
     sign_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
-    jsons=GetUserJson(deptId,text,stuNum,userName,phone,emergencyContact,guardianPhone,userId,customerId,token)
+    jsons=GetUserJson(deptId,text,stuNum,userName,phone,egcP,guardianPhone,userId,customerId,token)
     #提交打卡
     response = requests.post(sign_url, json=jsons,)
     return response
