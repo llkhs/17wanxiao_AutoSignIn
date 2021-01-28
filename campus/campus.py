@@ -43,7 +43,7 @@ class CampusCard:
             'exchangeFlag': True,
             'login': False,
             'serverPublicKey': '',
-            'deviceId': 868146026942328,
+            'deviceId': 868146026942328,    # 这里填入模拟器的IMEI码
             'wanxiaoVersion': 10531102,
             'rsaKey': {
                 'private': rsa_keys[1],
