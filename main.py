@@ -84,7 +84,7 @@ def GetUserJson(token):
         "businessType": "epmpics",
         "method": "userComeApp"
     }
-    res = requests.post(sign_url, json=user_json, porixes=petals, verify=False).json()
+    res = requests.post(sign_url, json=user_json, verify=False).json()
     print(res)
     data = json.loads(res['data'])
     post_dict = {
