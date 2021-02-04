@@ -8,7 +8,7 @@ from .campus_card import rsa_encrypt as rsa
 from .campus_card.rsa_encrypt import chrysanthemum
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
+petals = chrysanthemum()
 
 class CampusCard:
     """
@@ -59,7 +59,6 @@ class CampusCard:
         urlE = "https://app.17wanxiao.com/campus/cam_iface46/exchangeSecretkey.action"
         headerE = {"User-Agent": "NCP/5.3.1 (iPhone; iOS 13.5; Scale/2.00)"}
         jsonE = {"key": self.user_info["rsaKey"]["public"]}
-        petals = chrysanthemum()
         resp = requests.post(url=urlE, headers=headerE, json=jsonE, proxies=petals, verify=False)
         print(resp.text)
         session_info = json.loads(
@@ -103,6 +102,7 @@ class CampusCard:
             "https://app.17wanxiao.com/campus/cam_iface46/loginnew.action",
             headers={"campusSign": hashlib.sha256(json.dumps(upload_args).encode('utf-8')).hexdigest()},
             json=upload_args,
+
             verify=False
         ).json()
         print(resp.text)
@@ -129,6 +129,7 @@ class CampusCard:
                 "appClassify": "DK",
                 "token": self.user_info["sessionId"]
             },
+            porixes=petals,
             verify=False
         ).json()
         print(resp)
