@@ -98,15 +98,13 @@ class CampusCard:
             "session": self.user_info["sessionId"],
             "data": des_3.object_encrypt(login_args, self.user_info["appKey"])
         }
-        urlL = "https://app.17wanxiao.com/campus/cam_iface46/loginnew.action"
-        respw = requests.post(
-            url=urlL,
+        resp = requests.post(
+            url="https://app.17wanxiao.com/campus/cam_iface46/loginnew.action",
             headers={"campusSign": hashlib.sha256(json.dumps(upload_args).encode('utf-8')).hexdigest()},
             json=upload_args,
-            porxies=petals,
+            proxies=petals,
             verify=False
         )
-        resp = respw.json()
         print(resp.text)
         if resp["result_"]:
             self.data = resp["data"]
@@ -131,7 +129,7 @@ class CampusCard:
                 "appClassify": "DK",
                 "token": self.user_info["sessionId"]
             },
-            porixes=petals,
+            proxies=petals,
             verify=False
         ).json()
         print(resp)

@@ -84,7 +84,7 @@ def GetUserJson(token):
         "businessType": "epmpics",
         "method": "userComeApp"
     }
-    res = requests.post(sign_url, json=user_json, verify=False).json()
+    res = requests.post(sign_url, json=user_json, proxies=petals,verify=False).json()
     print(res)
     data = json.loads(res['data'])
     post_dict = {
@@ -121,7 +121,7 @@ def check_in(token):
     # print(jsons)
     # 提交打卡
     time.sleep(2)
-    res = requests.post(sign_url, json=jsons, verify=False, timeout=10)
+    res = requests.post(sign_url, json=jsons, proxies=petals, verify=False, timeout=10)
     print(res.json())
     return res
 
