@@ -60,7 +60,7 @@ def main():
             Smail = sendEmail(mail[index], key[0])
             print(Smail)
         except Exception:
-            print ('邮箱异常')
+            print('邮箱异常')
         print("-----------------------")
     fail = sorted(set(failure), key=failure.index)
     title = "成功: %s 人,失败: %s 人" % (len(success), len(fail))

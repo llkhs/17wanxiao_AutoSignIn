@@ -5,7 +5,7 @@ import time
 
 
 def sendEmail(mail, key):
-    msg_from = 'llkhs@qq.com'  # 发送方邮箱
+    msg_from = 'llkhs@qq.com'  # 发送方邮箱，
     passwd = ''.join(key)  # 填入发送方邮箱的授权码
     msg_to = ''.join(mail)   # 收件人邮箱
     subject = " ♡ 打卡成功"  # 主题
