@@ -28,18 +28,21 @@ def main():
     # 提交打卡
     print("-----------------------")
     for index, value in enumerate(phone):
-        count, msg, isSmail = 0, "null", False
+        count, msg, isSmail = 0, "null", {}
         print("开始获取用户%s信息" % (value[-4:]))
         while count < 2:
             try:
                 campus = CampusCard(phone[index], password[index])
+                if campus['code_'] == '5':
+                    msg = campus['message_']
+                    break
                 token = campus.user_info["sessionId"]
                 res = check_in(token).json()
                 strTime = GetNowTime()
                 if res['code'] == '10000':
                     success.append(value[-4:])
                     msg = value[-4:] + "-打卡成功-" + strTime
-                    isSmail = True
+                    isSmail = {'code': '114'}
                     result = res
                     break
                 else:
@@ -52,14 +55,15 @@ def main():
 
             except Exception as err:
                 print(err)
-                msg = {'msg': '925', 'data': '出现错误'}
-                isSmail = False
+                msg = '出现错误'
+                isSmail = {'code': '110'}
                 failure.append(value[-4:])
                 count = count + 1
+                time.sleep(10)
         print(msg)
         if isSmail:
             try:
-                Semail = sendEmail(mail[index], key[0], msg)
+                Semail = sendEmail(mail[index], key[0], isSmail)
                 print(Semail)
             except Exception:
                 print('邮箱异常')

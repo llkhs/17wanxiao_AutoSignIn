@@ -4,9 +4,9 @@ from email.mime.text import MIMEText
 import time
 
 
-def sendEmail(mail, key, msg):
-    print(msg)
-    if msg['msg']:
+def sendEmail(mail, key, isSmailcode):
+    print(isSmailcode)
+    if isSmailcode['code'] == 110:
         subject = "----------失败"  # 主题
     else:
         subject = " ♡ 打卡成功"  # 主题
