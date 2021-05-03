@@ -1,6 +1,6 @@
 # 💧广东水利电力学院 完美校园 签到
 
-**🌟推荐大家使用[ReaJason](https://github.com/ReaJason)大佬的[方案](https://github.com/ReaJason/17wanxiaoCheckin),里面有详细的手把手教程。**
+## 🌟推荐大家使用[ReaJason](https://github.com/ReaJason)大佬的[方案](https://github.com/ReaJason/17wanxiaoCheckin),里面有详细的手把手教程。
 
 **😥2021.04.14 项目Actions停止**
 
