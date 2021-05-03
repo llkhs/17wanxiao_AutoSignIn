@@ -2,7 +2,7 @@
 
 **🌟推荐大家使用[ReaJason](https://github.com/ReaJason)大佬的[方案](https://github.com/ReaJason/17wanxiaoCheckin),里面有详细的手把手教程。**
 
-**😥2021.04.14 项目Actions停止 **
+**😥2021.04.14 项目Actions停止**
 
 **😀2021.02.11 添加QQ邮箱推送，请在qqmail.py文件修改邮件发送方**
 
