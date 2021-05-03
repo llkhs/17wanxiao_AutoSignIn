@@ -2,7 +2,7 @@
 
 **🌟推荐大家使用[ReaJason](https://github.com/ReaJason)大佬的[方案](https://github.com/ReaJason/17wanxiaoCheckin),里面有详细的手把手教程。**
 
-**😥2021.04.14 项目Actions停止，穷学生无力续上10刀的用作代理请求(虽然上面还搭建了Blog)的服务器，所以这里不再(某种意义上)帮大家打卡了，如自己也有服务器搭建了http代理，可以clone本项目[再修改代理ip](https://github.com/llkhs/17wanxiao_AutoSignIn/blob/c9c4b03a1aadd70e5517a23d2a0bf50cd25f61cf/campus/campus_card/rsa_encrypt.py#L25)为自己，最好也让我一起白嫖。**
+**😥2021.04.14 项目Actions停止 **
 
 **😀2021.02.11 添加QQ邮箱推送，请在qqmail.py文件修改邮件发送方**
 
