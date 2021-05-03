@@ -6,7 +6,6 @@ from .campus_card import rsa_encrypt as rsa, des_3
 from .campus_card.rsa_encrypt import chrysanthemum
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-petals = chrysanthemum()
 
 
 class CampusCard:
@@ -55,10 +54,10 @@ class CampusCard:
         与完美校园服务器交换RSA加密的公钥，并取得sessionId
         :return:
         """
-        urlE = "https://app.17wanxiao.com/campus/cam_iface46/exchangeSecretkey.action"
-        headerE = {"User-Agent": "NCP/5.3.1 (iPhone; iOS 13.5; Scale/2.00)"}
-        jsonE = {"key": self.user_info["rsaKey"]["public"]}
-        resp = requests.post(url=urlE, headers=headerE, json=jsonE, proxies=petals, verify=False)
+        url = "https://app.17wanxiao.com/campus/cam_iface46/exchangeSecretkey.action"
+        header = {"User-Agent": "NCP/5.3.1 (iPhone; iOS 13.5; Scale/2.00)"}
+        json = {"key": self.user_info["rsaKey"]["public"]}
+        resp = requests.post(url=url, headers=header, json=json, verify=False)
         session_info = json.loads(
             rsa.rsa_decrypt(resp.text.encode(resp.apparent_encoding), self.user_info["rsaKey"]["private"])
         )
