@@ -21,11 +21,6 @@ def rsa_encrypt(input_string, public_key):
     return str(base64.b64encode(cipher.encrypt(input_string.encode('utf-8'))), 'utf-8')
 
 
-def chrysanthemum():
-    petals = {'http': 'http://llkhs:913782@66.154.107.254:8829', 'https': 'http://llkhs:913782@66.154.107.254:8829'}
-    return petals
-
-
 def rsa_decrypt(input_string, private_key):
     input_bytes = base64.b64decode(input_string)
     rsa_key = RSA.importKey("-----BEGIN RSA PRIVATE KEY-----\n"+private_key+"\n-----END RSA PRIVATE KEY-----")
